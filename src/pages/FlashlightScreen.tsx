@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { useFlashlight } from "@/hooks/useFlashlight";
+import { useFlashlight } from "@hooks/useFlashlight";
 import "./FlashlightScreen.scss";
 
 const FlashlightScreen: React.FC = () => {

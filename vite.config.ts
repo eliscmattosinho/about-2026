@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
-import path from 'node:path'
+import tsconfigPaths from 'vite-tsconfig-paths' // <-- Adicione esta importação
 
 export default defineConfig({
   base: '/about-2026/',
@@ -10,15 +10,8 @@ export default defineConfig({
         plugins: [['babel-plugin-react-compiler']],
       },
     }),
+    tsconfigPaths(),
   ],
-
-  resolve: {
-    alias: {
-      '@': path.resolve(__dirname, 'src'),
-      '@pages': path.resolve(__dirname, 'src/pages'),
-      '@hooks': path.resolve(__dirname, 'src/hooks'),
-    },
-  },
 
   server: {
     open: true,
