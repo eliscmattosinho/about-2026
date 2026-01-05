@@ -1,0 +1,57 @@
+.flashlight {
+  width: 100vw;
+  height: 100vh;
+  background: #281204;
+  position: relative;
+  overflow: hidden;
+  cursor: none;
+
+  &__light {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  &__text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+
+    font-size: 3.8rem;
+    font-weight: 900;
+    letter-spacing: 0.22em;
+
+    color: #5c3a00;
+    pointer-events: none;
+
+    --mx: 50%;
+    --my: 50%;
+
+    /* TEXTO ILUMINADO DE VERDADE */
+    text-shadow: 0 0 20px rgba(252, 170, 0, 0.3);
+
+    /* BRILHO LOCAL SEGUINDO O MOUSE */
+    background: radial-gradient(circle at var(--mx) var(--my),
+        rgba(255, 230, 180, 1) 0%,
+        rgba(252, 170, 0, 1) 40px,
+        rgba(252, 170, 0, 0.6) 90px,
+        rgba(252, 170, 0, 0.15) 140px,
+        transparent 180px);
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(circle,
+        rgba(40, 18, 4, 0.2),
+        rgba(40, 18, 4, 0.95));
+  }
+}
